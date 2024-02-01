@@ -1,19 +1,11 @@
-import "./App.css";
-import {
-  QueryClient,
-  QueryClientProvider,
-  useQuery,
-} from "@tanstack/react-query";
-import axios from "axios";
+import "./styles/App.css";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { useGetRootData } from "./hooks/api/useGetRootData";
 
 const queryClient = new QueryClient();
 
 function Example() {
-  const { isPending, error, data, isFetching } = useQuery({
-    queryKey: ["repoData"],
-    queryFn: () =>
-      axios.get("http://localhost:3001/test").then((res) => res.data),
-  });
+  const { isPending, error, data, isFetching } = useGetRootData();
 
   if (isPending) return "Loading...";
 
