@@ -7,20 +7,21 @@ import { Jumbotron } from "./components/Jumbotron";
 
 const queryClient = new QueryClient();
 
-// function Example() {
-//   const { isPending, error, data, isFetching } = useGetRootData();
+function Example() {
+  const { isPending, error, data, isFetching } = useGetRootData();
 
-//   if (isPending) return "Loading...";
+  if (isPending) return "Loading...";
 
-//   if (error) return "An error has occurred: " + error.message;
+  if (error) return "An error has occurred: " + error.message;
 
-//   return (
-//     <div>
-//       <pre>{JSON.stringify(data)}</pre>
-//       <div>{isFetching ? "Updating..." : ""}</div>
-//     </div>
-//   );
-// }
+  return (
+    <div>
+      <pre>{JSON.stringify(data)}</pre>
+      <pre>"Hello world this is preryy cool"</pre>
+      <div>{isFetching ? "Updating..." : ""}</div>
+    </div>
+  );
+}
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
       <div className="flex flex-col items-center justify-center">
         <div>
           <Jumbotron />
+          <Example />
         </div>
       </div>
     </QueryClientProvider>

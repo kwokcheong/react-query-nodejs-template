@@ -13,7 +13,9 @@ app.get("/", (req, res) => {
 });
 
 app.get("/test", (req, res) => {
-  res.json({ data: "Hello world" });
+  res.json({
+    data: "Hello world this is coming from test endpoint huh no change?",
+  });
 });
 
 app.listen(3001, () => {
